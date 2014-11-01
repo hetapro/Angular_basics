@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="app" >
+	<head lang="en">
+		<meta charset="UTF-8">
+		<title>Hello World</title>
+		<link href="D:\learning_topics\angular_files\bootstrap.min.css" rel="stylesheet" />
+	</head>
+	<body ng-controller="helloWorldCtrl">
+		<h1>{{ helloMessage }}</h1>
+		<p>Information from Controller</p>
+		<div>
+			<p>Your Name:{{event.name}}</p>
+			<p>Your Address:{{event.address}}</p>
+			<hr/>
+			<p>Sessions ng-repeat example</p>
+			<ul>
+			<li ng-repeat="session in event.sessions">
+				{{session.name}}
+			</li></ul>
+			<hr/>
+			Poll#1:
+			<div>
+			<button id="upvode" name="Upvote" value="Upvote" ng-click="upvoteClick(event)">Upvote</button>
+			No Of Votes : {{event.upVoteCount}}
+			<button id="downvode" name="Downvote" value="DownVote" ng-click="downvoteClick(event)">DownVote</button>
+			</div><span style="color:red">{{message}}</span><br/><br/>
+		</div>
+		Enter Your name :<input type="text" ng-model="name" />
+		<p>Hello {{name | uppercase}}</p>
+		Enter Image URL :<input id="eventImageURL" ng-model="event.imageURL" /><br/><br/>
+		Image:<img ng-src="{{event.imageURL}}" src="" width="100" height="100">
+		<script type="text/javascript" src='\learning_topics\angular_files\angular.min.js'></script>
+		<script type="text/javascript" src='\learning_topics\app.js'></script>
+	</body>
+</html>
